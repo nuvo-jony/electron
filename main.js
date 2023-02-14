@@ -12,15 +12,11 @@ const createWindow = () => {
         }
     });
     win.loadURL(url.format({
-        pathname: path.join(__dirname, `/dist/index.html`),
+        pathname: path.join(__dirname, `angular_build/index.html`),
         protocol: "file:",
         slashes: true
-    }));
+    })); 
 };
-
-app.whenReady().then(() => {
-    createWindow()
-});
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()

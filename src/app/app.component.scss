@@ -1,4 +1,10 @@
 .main-container {
     display: flex;
     flex-direction: column;
+
+    &__rectangle {
+        height: 20rem;
+        width: 30rem;
+        background-color: red;
+    }
 }

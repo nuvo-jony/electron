@@ -1,13 +1,20 @@
 {
-  "name": "electrong",
-  "version": "0.0.0",
+  "name": "app-name",
+  "version": "1.0.0",
   "main": "main.js",
+  "description": "description text here",
+  "author": {
+    "email": "jony.test.dev@gmail.com",
+    "name": "authorname"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng build --base-href ./ && electron .",
     "build": "ng build",
+    "electron:build": "npm run clean && ng build --base-href ./ && electron-builder -m",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "clean": "del ./dist/* ./angular_build/*"
   },
   "private": true,
   "dependencies": {
@@ -28,7 +35,9 @@
     "@angular/cli": "~15.0.4",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
+    "del-cli": "^5.0.0",
     "electron": "^23.0.0",
+    "electron-builder": "^23.6.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -36,5 +45,22 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.8.2"
+  },
+  "build": {
+    "appId": "com.jonydev.app-name",
+    "copyright": "Copyright jonydev",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "zip",
+      "certificateFile": "private/jonyCertTest.p12",
+      "certificatePassword": "jonathan",
+      "verifyUpdateCodeSignature": "false"
+    },
+    "linux": {
+      "category": "Utility"
+    }
   }
 }

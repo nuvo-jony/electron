@@ -2,9 +2,11 @@
 
 # Compiled output
 /dist
+/angular_build
 /tmp
 /out-tsc
 /bazel-out
+/private
 
 # Node
 /node_modules
